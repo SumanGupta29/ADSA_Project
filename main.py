@@ -8,9 +8,9 @@ class MyFinder(apf.draw.Finder):
 	
 	def step(self, frames):
 		self.max_distance = max( 0, self.max_distance + frames )
-		self.result = apf.tutorial_1.fill_shortest_path(self.game.board, self.game.start, self.game.end, max_distance = self.max_distance)
+		self.result = apf.shortest_path.fill_shortest_path(self.game.board, self.game.start, self.game.end, max_distance = self.max_distance)
 		self.set_board(self.result)
-		self.set_path(apf.tutorial_1.backtrack_to_start(self.result, self.game.end))
+		self.set_path(apf.shortest_path.backtrack_to_start(self.result, self.game.end))
 	
 	def reset(self):
 		self.game = apf.maze.create_wall_maze(20,10)

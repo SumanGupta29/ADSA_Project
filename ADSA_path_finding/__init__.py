@@ -1,2 +1,2 @@
-from . import tutorial_1
+from . import shortest_path
 from . import draw, maze
